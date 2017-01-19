@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<style type="text/css">
+    #table{width: 100%;border: 1px solid #cc9900;border-collapse:collapse;}
+    th,td{height: 28px;border: 1px solid #cc9900;text-align: center}
+    .evenRow01{background: hotpink;}
+    .oddRow{background: darkseagreen;}
+    .currentRow{background: burlywood;}
+    ul{list-style: none}
+    .tabnav li{float: left;border: 1px solid #cc9900;width:150px;height: 26px;line-height: 26px;text-align: center;
+    cursor: pointer;}
+    .tabcon{clear: both}
+    .tabcon div{
+        border: 1px solid #f05e6f;width: 455px;height: 200px;display: none;margin-left: 40px;
+    }
+    .sc{background: gainsboro;}
+</style>
+</head>
+<body>
+<table id="table">
+    <tr><th>姓名</th><th>年龄</th><th>身高</th><th>体重</th></tr>
+    <tr><td>小明</td><td>18</td><td>172</td><td>62</td></tr>
+    <tr><td>小明</td><td>18</td><td>172</td><td>62</td></tr>
+    <tr><td>小明</td><td>18</td><td>172</td><td>62</td></tr>
+    <tr><td>小明</td><td>18</td><td>172</td><td>62</td></tr>
+    <tr><td>小明</td><td>18</td><td>172</td><td>62</td></tr>
+    <tr><td>小明</td><td>18</td><td>172</td><td>62</td></tr>
+    <tr><td>小明</td><td>18</td><td>172</td><td>62</td></tr>
+    <tr><td>小明</td><td>18</td><td>172</td><td>62</td></tr>
+    <tr><td>小明</td><td>18</td><td>172</td><td>62</td></tr>
+</table>
+<div class="tab">
+    <ul class="tabnav">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <div class="tabcon">
+        <div style="display: block">HTML</div>
+        <div >CSS</div>
+        <div >JavaScript</div>
+    </div>
+</div>
+</body>
+</html>
+<script src="JQ/jquery-1.9.1.min.js"></script>
+<script src="JQ/插件开发.js"></script>
+<script type="text/javascript">
+   $(function () {
+           $('#table').table({
+               evenRowClass:'evenRow01',
+               oddRowClass:'oddRow',
+               currentRowClass:'currentRow',
+               eventType1:'mouseover',
+               eventType2:'mouseout'
+           });
+
+       $('.tab').tab({
+           currentClass:'sc',
+           tabNav:'.tabnav>li',
+           tabCon:'.tabcon>div',
+           evenType:'mouseover'
+       })
+
+   })
+</script>
